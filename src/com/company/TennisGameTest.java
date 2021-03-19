@@ -18,4 +18,33 @@ public class TennisGameTest {
         Assertions.assertEquals("15-0",tennisGame.score());
 
     }
+
+    @Test
+    public void test30_0(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.firstPlayerScore();
+        tennisGame.firstPlayerScore();
+        Assertions.assertEquals("30-0",tennisGame.score());
+
+    }
+
+    @Test
+    public void test40_0(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.firstPlayerScore();
+        tennisGame.firstPlayerScore();
+        tennisGame.firstPlayerScore();
+        Assertions.assertEquals("40-0",tennisGame.score());
+
+    }
+    @Test
+    public void testWin_0(){
+        TennisGame tennisGame = new TennisGame();
+        tennisGame.firstPlayerScore();
+        tennisGame.firstPlayerScore();
+        tennisGame.firstPlayerScore();
+        tennisGame.firstPlayerScore();
+        Assertions.assertEquals("Win game",tennisGame.score());
+
+    }
 }
