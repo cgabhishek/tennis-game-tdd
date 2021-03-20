@@ -18,12 +18,19 @@ public class Game {
                 return getLeadPlayer().getName() + " win set";
             } else if ((player1.getScore() == 7 || player2.getScore() == 7) && (Math.abs(player2.getScore() - player1.getScore()) >= 1)) {
                 return getLeadPlayer().getName() + " win the match";
+            } else if (player1.getScore() >= 6 && player2.getScore() >= 6) {
+                //tie break rule activated
+                if (Math.abs(player2.getScore() - player1.getScore()) >= 2) {
+                    //player win the tie break, win the set and the match
+                    return getLeadPlayer().getName() + " win the set and match";
+                }
             } else {
                 return "";
             }
         } else {
             return player1.getPlayerScoreDashboard() + "-" + player2.getPlayerScoreDashboard();
         }
+        return "";
     }
 
     public Player getLeadPlayer() {

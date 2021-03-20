@@ -59,6 +59,20 @@ public class GameTest {
         assertThat(game,hasProperty("score",is("player2 win the match")));
     }
 
+    @Test
+    public void testPlayer1WinTieBreakAndMatch(){
+        scoreWinByPlayer(8, player1);
+        scoreWinByPlayer(6, player2);
+        assertThat(game,hasProperty("score",is("player1 win the set and match")));
+    }
+
+    @Test
+    public void testPlayer2WinTieBreakAndMatch(){
+        scoreWinByPlayer(8, player1);
+        scoreWinByPlayer(10, player2);
+        assertThat(game,hasProperty("score",is("player2 win the set and match")));
+    }
+
     /**
      * Common method to update score by current player
      * @param times
