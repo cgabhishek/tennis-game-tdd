@@ -1,30 +1,44 @@
 package com.company;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * @author abhishek
+ */
 public class TennisGame {
 
-    private int firstPlayerScore;
+    private Player player1;
+    private Player player2;
 
-    public String score() {
+    /**
+     * Constructor
+     * @param player1
+     * @param player2
+     */
+    public TennisGame(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
 
-        Map<Integer, String> map = new HashMap<Integer, String>() {{
-            put(1, "15");
-            put(2, "30");
-            put(3, "40");
-            put(4, "Win game");
-        }};
-        if (firstPlayerScore >0 && firstPlayerScore < 4  ) {
-            return map.get(firstPlayerScore) + "-0";
-        }else if(firstPlayerScore==4){
-            return map.get(firstPlayerScore);
-
-        }
-        return "0-0";
     }
 
-    public void firstPlayerScore() {
-        firstPlayerScore++;
+    public String getScore() {
+        if (player1.getScore() >= 3 && player2.getScore() >= 3) {
+            if (Math.abs(player2.getScore() - player1.getScore()) >= 2) {
+                return getLeadPlayer().getName() + " win";
+            } else if (player1.getScore() == player2.getScore()) {
+                return "deuce";
+            } else {
+                return "advantage " + getLeadPlayer().getName();
+            }
+        } else {
+            return player1.getPlayerScoreDashboard() + "-" + player2.getPlayerScoreDashboard();
+        }
+
+    }
+
+    /**
+     * Get current lead player by points
+     * @return
+     */
+    private Player getLeadPlayer() {
+        return (player1.getScore() > player2.getScore() ? player1 : player2);
     }
 }
