@@ -1,4 +1,4 @@
-package com.company;
+package com.company.sprint1;
 
 /**
  * @author abhishek

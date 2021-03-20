@@ -1,4 +1,4 @@
-package com.company;
+package com.company.sprint1;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
