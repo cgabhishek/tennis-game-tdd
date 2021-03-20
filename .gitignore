@@ -2,3 +2,8 @@
 *.class
 *.iml
 *.iml
+.idea/libraries/hamcrest_2_2.xml
+.idea/uiDesigner.xml
+out/production/Tennis-game-tdd/META-INF/Tennis-game-tdd.kotlin_module
+Tennis-game-tdd.iml
+*.iml
